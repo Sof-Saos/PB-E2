@@ -1,52 +1,47 @@
+package src;
 
 public class Estudiante extends Persona implements Estaditicas{
     private String carnet;
     private double[] notas;
     private int contadorNotas;
 
-    public Estudiante(String nombre, int edad, String genero, String carnet) {
+    public Estudiante(String nombre, int edad, String genero, String carnet,  double[] notas) {
         super(nombre, edad, genero);
         this.carnet = carnet;
-        this.notas = new double[3];
+        this.notas = notas;
         this.contadorNotas = 0;
 
     }
 
-    public void agregarNota(double nota ){
-        if (contadorNotas<3){
-            this.notas[contadorNotas] = nota;
-            contadorNotas++;
-        }
-    }
-
     @Override
     public double calcularPromedio() {
-        double resultadoSuma = this.notas[0] + this.notas[1] + this.notas[2];
-        double resultadoPromedio = resultadoSuma / 3;
-        return resultadoPromedio;
+        double suma = 0;
+        for (double nota : notas) {
+            suma += nota;
+        }
+        return suma / notas.length;
     }
 
     @Override
     public double calcularMaximo() {
-        double notaMayor = 0.0;
-        for (int i = 0; i < contadorNotas; i++) {
-            if(this.notas[i] > notaMayor){
-                notaMayor = this.notas[i];
+        double max = notas[0];
+        for (double nota : notas) {
+            if (nota > max) {
+                max = nota;
             }
         }
-        return notaMayor;
+        return max;
     }
 
     @Override
     public double calcularMinimo() {
-        double notaMayor = 5.0;
-        double notaMenor = 0.0;
-        for (int i = 0; i < contadorNotas; i++) {
-            if(this.notas[i] < notaMayor) {
-                notaMenor = this.notas[i];
+        double min = notas[0];
+        for (double nota : notas) {
+            if (nota < min) {
+                min = nota;
             }
         }
-        return notaMenor;
+        return min;
     }
 
     public String getCarnet() {

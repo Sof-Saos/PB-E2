@@ -1,25 +1,16 @@
+package src;
 import java.util.ArrayList;
-
-public class Curso implements Gestionable {
-    private String nombreCurso;
-    private Profesor profesor;
-    private ArrayList<Estudiante> estudiantes;
-    private ArrayList<Estudiante> estudiantesParticipantes;
+public abstract class Curso {
+    protected String nombreCurso;
+    protected Profesor profesor;
+    protected ArrayList<Estudiante> estudiantes;
     public Curso(String nombreCurso, Profesor profesor) {
         this.nombreCurso = nombreCurso;
         this.profesor = profesor;
         this.estudiantes = new ArrayList<>();;
     }
-    public void agregarEstudiante(Estudiante alumno) {
-        this.estudiantes.add(alumno);
-    }
-    @Override
-    public void inscripcion(Estudiante alumnoNuevo) {
-        this.estudiantes.add(alumnoNuevo);
-    }
-    @Override
-    public void retiro(Estudiante alumnoAburrido) {
-        this.estudiantes.remove(alumnoAburrido);
+    public void agregarEstudiante(Estudiante estudiante) {
+        estudiantes.add(estudiante);
     }
 
     public String getNombreCurso() {
@@ -42,7 +33,6 @@ public class Curso implements Gestionable {
         return estudiantes;
     }
 
-    public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
-        this.estudiantes = estudiantes;
-    }
+
 }
+

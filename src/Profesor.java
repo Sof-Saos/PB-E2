@@ -1,3 +1,4 @@
+package src;
 import java.util.ArrayList;
 
 public class Profesor extends Persona {
@@ -5,10 +6,10 @@ public class Profesor extends Persona {
     private ArrayList<String> materias;
 
 
-    public Profesor(String nombre, int edad, String genero, String titulo) {
+    public Profesor(String nombre, int edad, String genero, String titulo, ArrayList<String> materias) {
         super(nombre, edad, genero);
         this.titulo = titulo;
-        this.materias = new ArrayList<>();
+        this.materias = materias;
     }
 
     public void agregarMaterias(String materia) {

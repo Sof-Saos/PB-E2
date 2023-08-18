@@ -1,4 +1,4 @@
-
+package src;
 public class Persona {
     private String nombre;
     private int edad;
@@ -8,6 +8,9 @@ public class Persona {
         this.edad = edad;
         this.genero = genero;
     }
+
+
+
 
     public String getNombre() {
         return nombre;

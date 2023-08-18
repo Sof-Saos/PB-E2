@@ -1,4 +1,6 @@
+package src;
+
 public interface Gestionable {
-    void inscripcion(Estudiante alumnoNuevo);
-    void retiro(Estudiante alumnoARetirar);
+    public boolean inscripcion(Estudiante estudiante);
+    public boolean retiro(Estudiante estudiante);
 }

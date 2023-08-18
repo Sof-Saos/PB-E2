@@ -1,5 +1,5 @@
+package src;
 import java.util.ArrayList;
-
 public class Universidad {
     private ArrayList<Profesor> profesores;
     private ArrayList<Estudiante> estudiantes;
@@ -28,8 +28,8 @@ public class Universidad {
         for (Curso curso : cursos) {
             System.out.println("Nombre del curso: " + curso.getNombreCurso());
             System.out.println("Profesor a cargo: " + curso.getProfesor().getNombre());
-            System.out.println("-----");
         }
+        System.out.println(" ");
     }
 
     public void mostrarProfesores() {
@@ -37,8 +37,8 @@ public class Universidad {
         for (Profesor profesor : profesores) {
             System.out.println("Nombre del profesor: " + profesor.getNombre());
             System.out.println("Título: " + profesor.getTitulo());
-            System.out.println("-----");
         }
+        System.out.println(" ");
     }
 
     public void mostrarEstudiantes() {
@@ -46,14 +46,15 @@ public class Universidad {
         for (Estudiante estudiante : estudiantes) {
             System.out.println("Nombre del estudiante: " + estudiante.getNombre());
             System.out.println("Carnet: " + estudiante.getCarnet());
-            System.out.println("-----");
         }
+        System.out.println(" ");
     }
 
     public void mostrarTodo() {
         System.out.println("Información de toda la universidad");
         System.out.println("La universidad cuenta con " + estudiantes.size() + " estudiantes" + ", con " + profesores.size() + " profesores y " + cursos.size() + " cursos.");
         mostrarCursos();
+
         mostrarEstudiantes();
         mostrarProfesores();
     }
